@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/Pages/signup_page.dart';
-import 'package:nsdd/providers/password_provider.dart';
-import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,6 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool password = true;
   TextEditingController emailControl = TextEditingController();
   TextEditingController passwordControl = TextEditingController();
   @override
@@ -37,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Login',
+                  'Sign In',
                   style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
@@ -52,8 +51,8 @@ class _LoginPageState extends State<LoginPage> {
                   keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.email),
-                    labelText: "Email",
+                    prefixIcon: Icon(Icons.fingerprint),
+                    labelText: "12345-431212-6",
                     hintText: "Please Enter Yours Email",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.zero,
@@ -63,37 +62,21 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 10.h,
                 ),
-                Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Consumer<PasswordProvider>(
-                        builder: ((context, pp, child) {
-                      return TextFormField(
-                        obscureText: pp.isObscure,
-                        controller: passwordControl,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.next,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                pp.toggleIsObscure();
-                              });
-                            },
-                            icon: Icon(
-                              (pp.isObscure
-                                  ? Icons.visibility
-                                  : Icons.visibility_off),
-                            ),
-                          ),
-                          labelText: "Password",
-                          hintText: "Please Enter Yours Password",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.zero,
-                          ),
-                        ),
-                      );
-                    }))),
+                TextFormField(
+                  obscureText: password,
+                  controller: passwordControl,
+                  keyboardType: TextInputType.visiblePassword,
+                  textInputAction: TextInputAction.next,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: Icon(Icons.remove_red_eye),
+                    labelText: "Password",
+                    hintText: "Please Enter Yours Password",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.zero,
+                    ),
+                  ),
+                ),
                 SizedBox(
                   height: 10.h,
                 ),

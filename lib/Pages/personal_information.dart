@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nsdd/Pages/personal_information2.dart';
 import 'package:nsdd/Pages/province.dart';
 
 class PersonalInformation extends StatefulWidget {
@@ -239,103 +240,19 @@ class _PersonalInformationState extends State<PersonalInformation> {
                     SizedBox(
                       height: 20.h,
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: "Email",
-                          prefixIcon: Icon(Icons.email),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: "Contact No.",
-                          prefixIcon: Icon(Icons.phone),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: " Other Contact No.",
-                          prefixIcon: Icon(Icons.phone),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: " Guardian Contact No.",
-                          prefixIcon: Icon(Icons.phone),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: " Postal Address",
-                          prefixIcon: Icon(Icons.location_on_outlined),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: " Permanent Address",
-                          prefixIcon: Icon(Icons.location_on_outlined),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    DropdownButtonFormField<Provice>(
-                      items: dropdownItemProvice,
-                      onChanged: (Provice? value) {},
-                      decoration: InputDecoration(
-                          hintText: "Domicile Distt",
-                          prefixIcon: Icon(Icons.document_scanner),
-                          suffixIcon: Icon(Icons.arrow_drop_down),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                          hintText: "Minority",
-                          prefixIcon: Icon(Icons.add_box),
-                          suffixIcon: Icon(Icons.rectangle_outlined),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.r))),
-                    ),
+                    ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const PersonalInformation2()),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xff8B010B),
+                        ),
+                        child: Text('move'))
                   ],
                 ),
               ),
