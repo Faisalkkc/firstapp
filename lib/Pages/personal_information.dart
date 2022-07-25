@@ -252,7 +252,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xff8B010B),
                         ),
-                        child: Text('move'))dsfsdafdsfdsaf
+                        child: Text('move')),
                   ],
                 ),
               ),
